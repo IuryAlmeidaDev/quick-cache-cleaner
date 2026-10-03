@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Limpar Cache da Página</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 290px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f172a; /* Slate dark elegante */
+      color: #f8fafc;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #1e293b;
+    }
+    .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.2);
+      color: #10b981;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 3px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .current-site {
+      background: #1e293b;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .current-site strong {
+      color: #f1f5f9;
+      max-width: 170px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+    }
+    .btn-primary {
+      background: #10b981;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    }
+    .btn-primary:hover {
+      background: #059669;
+    }
+    .btn-secondary {
+      background: #1e293b;
+      color: #cbd5e1;
+      border: 1px solid #334155;
+    }
+    .btn-secondary:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+    .info-box {
+      margin-top: 14px;
+      background: rgba(16, 185, 129, 0.08);
+      border-left: 3px solid #10b981;
+      border-radius: 4px;
+      padding: 8px 10px;
+      font-size: 11px;
+      color: #94a3b8;
+      line-height: 1.4;
+    }
+    .info-box strong {
+      color: #10b981;
+    }
+    .toast-msg {
+      text-align: center;
+      font-size: 12px;
+      color: #10b981;
+      font-weight: 600;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="icons/icon48.png" alt="Logo" class="logo">
+    <div>
+      <div class="title">Limpar Cache da Página</div>
+      <span class="badge">🛡️ Mantém seus logins</span>
+    </div>
+  </div>
+
+  <div class="current-site">
+    <span>Site ativo:</span>
+    <strong id="siteDomain">Carregando...</strong>
+  </div>
+
+  <div class="actions">
+    <button id="btnHardReload" class="btn btn-primary">
+      <span>⚡ Limpar Cache & Recarregar</span>
+    </button>
+    <button id="btnClearGlobal" class="btn btn-secondary">
+      <span>🧹 Limpar Todo o Cache</span>
+    </button>
+  </div>
+
+  <div id="toastSuccess" class="toast-msg">
+    ✓ Cache limpo com sucesso!
+  </div>
+
+  <div class="info-box">
+    <strong>Sem perda de logins:</strong> Apenas arquivos temporários, imagens antigas e scripts são limpos. Suas sessões permanecem abertas.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

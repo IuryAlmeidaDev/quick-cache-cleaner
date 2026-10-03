@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Limpar Cache da Página - 1 Clique Sem Deslogar",
+  "version": "1.0.0",
+  "description": "Limpe o cache e recarregue a aba atual em 1 clique sem perder seus logins ou senhas em outros sites.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "browsingData"
+  ],
+  "action": {
+    "default_title": "Limpar Cache e Recarregar",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
